@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title": "Страницы сайта"
+})
+
+<body class="bd">
+	<main>
+
+		<div class="menu">
+			<ul>
+				<li><a href="index.html" class="section-title" target="_blank">Главная</a></li>
+				<li><a href="services.html" class="section-title" target="_blank">Услуги</a></li>
+				<li><a href="service-item.html" class="section-title" target="_blank">Страница услуги</a></li>
+				<li><a href="about.html" class="section-title" target="_blank">О компании</a></li>
+				<li><a href="blog.html" class="section-title" target="_blank">Блог</a></li>
+				<li><a href="blog-item.html" class="section-title" target="_blank">Статья</a></li>
+				<li><a href="reviews.html" class="section-title" target="_blank">Отзывы</a></li>
+				<li><a href="contacts.html" class="section-title" target="_blank">Контакты</a></li>
+			</ul>
+		</div>
+
+		<style>
+			.menu {
+				padding: 3.125rem;
+
+				ul {
+					li {
+						margin-bottom: 2rem;
+
+						&:last-child {
+							margin: 0;
+						}
+
+						a {
+							color: var(--accent);
+
+							&:hover {
+								color: var(--text);
+							}
+						}
+					}
+				}
+			}
+		</style>
+
+	</main>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -77,7 +77,7 @@ window.addEventListener('resize', windowResize);
 const swiper1 = new Swiper('.main-reviews-slider__swiper', {
 	modules: [Navigation, Pagination],
 	speed: 600,
-	slidesPerView: 2.5,
+	slidesPerView: 'auto',
 	spaceBetween: pageRem * 2,
 	navigation: {
 		nextEl: '.main-reviews-slider__next',

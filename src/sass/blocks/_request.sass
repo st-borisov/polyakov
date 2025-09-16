@@ -38,3 +38,31 @@
 			&__left
 				display: flex
 				gap: 2rem
+
+@media screen and ( max-width: 1024px )
+	.request
+		&__content
+			margin-left: 0
+			gap: 2rem
+			margin-top: 3rem
+		&-desc
+			&__email
+				font-size: 1.25rem
+		&-two
+			.request-desc
+				&__left
+					flex-direction: column
+					gap: .25rem
+
+@media screen and ( max-width: 576px )
+	.request
+		&__content
+			flex-direction: column
+		&-desc
+			&__work
+				font-size: .875rem
+				margin-top: .5rem
+			&__contacts
+				justify-content: space-between
+			&__sub
+				font-size: .875rem

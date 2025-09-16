@@ -90,14 +90,14 @@ const swiper1 = new Swiper('.main-reviews-slider__swiper', {
 	},
 
 	breakpoints: {
-		992: {
-
+		1025: {
+			spaceBetween: pageRem * 2,
 		},
-		576: {
-
+		577: {
+			spaceBetween: pageRem * 3.75,
 		},
 		0: {
-
+			spaceBetween: pageRem * 7.68,
 		}
 	}
 });

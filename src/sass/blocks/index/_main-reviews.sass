@@ -5,7 +5,7 @@
 	&__title
 		margin-top: 3rem
 		max-width: 53.125rem
-		width: 1000%
+		width: 100%
 	&__header
 		padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
 		padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
@@ -27,6 +27,7 @@
 			.swiper-slide
 				max-width: 40.25rem
 				width: 100%
+				height: auto
 	&-benefits
 		padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
 		padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
@@ -37,3 +38,52 @@
 			gap: 3.75rem
 		&__btn
 			margin-top: 3rem
+
+@media screen and ( max-width: 1024px )
+	.main-reviews
+		&__header
+			padding: 0 2rem
+		&__title
+			margin-top: 2rem
+		&-slider
+			margin-top: 3rem
+			&__elements
+				gap: 1.5rem
+			&__header
+				padding: 0 2rem
+				gap: 1.5rem
+			&__swiper
+				margin-top: 3rem
+				padding: 0 2rem
+				.swiper-slide
+					max-width: 21.25rem
+		&-benefits
+			margin-top: 3rem
+			padding: 0 2rem
+			&__items
+				+col-one
+				gap: 1.5rem
+
+@media screen and ( max-width: 576px )
+	.main-reviews
+		&__header
+			padding: 0 1rem
+		&-benefits
+			padding: 0 1rem
+		&-slider
+			display: flex
+			flex-direction: column-reverse
+			&__arrows
+				display: none
+			&__btn
+				display: none
+			&__swiper
+				margin: 0
+				padding: 0 1rem
+				.swiper-slide
+					max-width: 19.4375rem
+			&__header
+				margin-top: 2rem
+			&__pagination
+				max-width: 15rem
+				margin: auto

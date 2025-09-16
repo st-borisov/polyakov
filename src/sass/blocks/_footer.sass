@@ -32,6 +32,7 @@
 			gap: 2rem
 			li
 				a
+					display: block
 					font-size: .875rem
 					text-transform: uppercase
 					line-height: 1
@@ -48,3 +49,52 @@
 		color: #D9D9D9
 		opacity: 0.8
 		text-decoration: underline
+
+@media screen and ( max-width: 1440px	)
+	.footer
+		.container
+			padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
+			padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
+
+@media screen and ( max-width: 1024px )
+	.footer
+		.container
+			padding: 0 2rem
+		&__top
+			flex-direction: column
+			gap: 1.5rem
+		&__menu
+			position: initial
+			margin: 0
+			width: auto
+			order: 1
+		&__email
+			order: 2
+		&__contacts
+			order: 3
+		&__bottom
+			flex-direction: column-reverse
+			gap: 1.5rem
+			text-align: center
+
+@media screen and ( max-width: 576px )
+	.footer
+		&::before
+			height: 33.125rem
+		.container
+			padding: 0 1rem
+		&__top
+			gap: 0
+		&__email
+			margin-top: 4rem
+		&__menu
+			ul
+				flex-direction: column
+				text-align: center
+				gap: 1.5rem
+		&__contacts
+			margin-top: 1.5rem
+			flex-direction: column
+			gap: 1.5rem
+		&__bottom
+			margin-top: 1.5rem

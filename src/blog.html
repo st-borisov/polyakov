@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title": "Главная"
+})
+
+<body class="blog-page">
+	@@include('html/header.html', {})
+	<main>
+
+
+
+		<!-- Не дайте проблеме усугубиться — действуйте сейчас -->
+		<section class="section request">
+			<div class="container">
+				<div class="request__block">
+					<div class="request__header">
+						<h2 class="section-title request__title"><span class="accent">Не дайте</span> проблеме усугубиться — <span
+								class="accent">действуйте</span> сейчас
+						</h2>
+					</div>
+					<div class="request__content">
+						<div class="request__image box">
+							<img src="@img/request/image-2.jpg" alt="фото">
+						</div>
+						<div class="request__info">
+							<div class="request-desc">
+								<div class="request-desc__header">
+									<h3 class="request-desc__title item-title">Виталий Владимирович</h3>
+									<p class="request-desc__work">Руководитель агентства</p>
+								</div>
+								<div class="request-desc__contacts">
+									<div class="request-desc__left">
+										<a href="tel:+79111234567" class="request-desc__phone phone">+7 911 123 45 67</a>
+									</div>
+									<a href="mailto:help@polyakov.ru" class="request-desc__email email">help@polyakov.ru</a>
+									<div class="request-desc__socials socials">
+										<a href="#" target="_blank" rel="nofollow" class="socials-item">
+											<span class="socials-item__icon icon">
+												<img src="@img/interface/tg.svg" alt="телеграм">
+											</span>
+										</a>
+										<a href="#" target="_blank" rel="nofollow" class="socials-item">
+											<span class="socials-item__icon icon">
+												<img src="@img/interface/wa.svg" alt="whatsapp">
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="request-desc__example">
+									<p class="request-desc__name name">Бесплатная 20-ти минутная консультация:
+										Четко определю чем можем помочь.</p>
+									<div class="request-desc__text text">
+										<p>Конфиденциально. Без навязывания услуг.</p>
+									</div>
+								</div>
+							</div>
+							<a href="#" class="request-desc__btn btn-light">Получить консультацию</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	@@include('html/footer.html', {})
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

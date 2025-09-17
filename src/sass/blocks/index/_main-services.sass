@@ -1,0 +1,126 @@
+.main-services
+	&__block
+		position: relative
+		&::before
+			content: ''
+			width: 70rem
+			height: 56.25rem
+			background: #015D74
+			opacity: 0.5
+			filter: blur(12.5rem)
+			position: absolute
+			top: 2.25rem
+			left: -10rem
+			z-index: -1
+			border-radius: 70%
+	.container
+		padding: 0
+	&__title
+		margin-top: 3rem
+	&__header
+		padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
+		padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
+	&-types
+		margin-top: 4rem
+		padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
+		padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
+		&__items
+			margin-top: 2rem
+	&-popular
+		margin-top: 4rem
+		&__title
+			min-width: 25.75rem
+		&__header
+			+between-center
+			gap: 3rem
+			padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
+			padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
+		&__elements
+			+center-stroke
+			gap: 3rem
+			width: 100%
+		&__swiper
+			margin-top: 2rem
+			padding-left: calc((100% - 86.25rem) / 2 + 1.875rem)
+			padding-right: calc((100% - 86.25rem) / 2 + 1.875rem)
+			.swiper-slide
+				max-width: 23.75rem
+				height: auto
+	&-tabs
+		display: none
+
+@media screen and ( max-width: 1024px )
+	.main-services
+		&__header
+			padding: 0 2rem
+		&__title
+			margin-top: 2rem
+		&-types
+			padding: 0 2rem
+			margin-top: 3rem
+		&-popular
+			margin-top: 3rem
+			&__header
+				padding: 0 2rem
+				flex-direction: column
+				align-items: flex-start
+				gap: 2rem
+			&__elements
+				gap: 1.5rem
+			&__swiper
+				padding: 0 2rem
+				.swiper-slide
+					max-width: 21.25rem
+
+@media screen and ( max-width: 576px )
+	.main-services
+		&__block
+			&::before
+				display: none
+		&__header
+			padding: 0 1rem
+		&__title
+			display: none
+		&-types
+			padding: 0 1rem
+			display: none
+		&-popular
+			margin-top: 2rem
+			&__header
+				padding: 0 1rem
+			&__elements
+				display: none
+			&__swiper
+				display: none
+				padding: 0 1rem
+			&__title
+				font-size: 2.5rem
+				min-width: 100%
+				+semi
+				span
+					color: var(--accent)
+		&-tabs
+			margin-top: 3rem
+			display: block
+			padding: 0 1rem
+			.tabs
+				&__nav
+					+col-two
+				&__btn
+					color: var(--accent)
+					border: none
+					border-bottom: .0625rem solid
+					letter-spacing: 0.05em
+					text-transform: uppercase
+					line-height: 1
+					font-size: .875rem
+					background-color: transparent
+					height: 2.6875rem
+					display: flex
+					justify-content: center
+					+semi
+					&_active
+						color: #fff
+						border-bottom: .125rem solid
+				&__content
+					margin-top: 2rem

@@ -1,0 +1,23 @@
+.blog
+	&__content
+		margin-top: 6.25rem
+	&__cards
+		margin-top: 3rem
+		+col-three
+		gap: 2rem
+	&__more
+		margin: auto
+		margin-top: 3rem
+
+@media screen and ( max-width: 1024px )
+	.blog
+		&__content
+			margin-top: 4rem
+		&__cards
+			+col-two
+
+@media screen and ( max-width: 576px )
+	.blog
+		&__cards
+			margin-top: 4rem
+			+col-one

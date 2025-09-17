@@ -11,6 +11,20 @@
 		+col-three
 	&__btn
 		margin-top: 1.375rem
+	&__block
+		position: relative
+		&::before
+			content: ''
+			width: 70rem
+			height: 56.25rem
+			background: #015D74
+			opacity: 0.5
+			filter: blur(12.5rem)
+			position: absolute
+			top: 9.25rem
+			left: -0.5rem
+			z-index: -1
+			border-radius: 70%
 
 @media screen and ( max-width: 1024px )
 	.main-about
@@ -21,3 +35,12 @@
 			margin-top: 3rem
 		&__group
 			margin-top: 3.5rem
+
+@media screen and ( max-width: 576px )
+	.main-about
+		&__block
+			&::before
+				width: 44.3125rem
+				height: 35.625rem
+				top: 2.5625rem
+				left: -50%

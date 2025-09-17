@@ -1,0 +1,420 @@
+.article-page
+	padding-bottom: 3.4375rem
+	&-main-image
+		margin-bottom: 3rem
+	.image
+		width: 100%
+		height: 46.4375rem
+		border-radius: 1.5rem
+		overflow: hidden
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__title
+		display: block
+		width: 100%
+		font-size: 6rem
+		line-height: 110%
+		margin-bottom: 3.5rem
+	&__content
+		padding-left: 4.625rem
+		padding-right: 8.125rem
+	&-info
+		padding: 2rem
+		border-radius: 1.5rem
+		background-color: #195061
+		max-width: 41.25rem
+		margin-bottom: 3.5rem
+		&-author
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			&__texts
+				display: flex
+				flex-direction: column
+				gap: .3125rem
+				margin-left: 1rem
+			&__name
+				font-size: 1rem
+				line-height: 160%
+			&__text
+				font-size: .875rem
+				line-height: 160%
+				color: #8C9DA4
+			&__avatar
+				.image
+					width: 4rem
+					height: 4rem
+					overflow: hidden
+					border-radius: 1rem
+					img
+						width: 100%
+						height: 100%
+
+		&__header
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+		&__text
+			margin-top: 2rem
+			p
+				letter-spacing: 0.05em
+				font-size: 1rem
+				line-height: 140%
+				text-transform: uppercase
+				+semi
+		&-wrapper
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			padding-top: .5rem
+		&-time
+			font-size: .875rem
+			line-height: 160%
+			color: #8C9DA4
+		&-categorys
+			ul
+				display: flex
+				align-items: center
+				justify-content: flex-end
+				li
+					position: relative
+					padding-left: 1.5rem
+					&::after
+						content: ''
+						display: block
+						position: absolute
+						margin: auto
+						left: .625rem
+						top: .625rem
+						bottom: auto
+						width: .25rem
+						height: .25rem
+						border-radius: 100%
+						background-color: #8C9DA4
+					a
+						font-size: .875rem
+						line-height: 160%
+						color: #8C9DA4
+	&-text
+		margin-bottom: 3.75rem
+		&:last-child
+			margin-bottom: 0
+	&-image
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 2.375rem
+		&:last-child
+			margin-bottom: 0
+		.image
+			width: 41.25rem
+			height: 27.5rem
+			overflow: hidden
+			border-radius: 1rem
+			img
+				width: 100%
+				height: 100%
+				overflow: hidden
+	&-quote__wrapper
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 3.75rem
+	&-quote
+		background: rgba(255, 255, 255, 0.1)
+		box-shadow: 0rem .25rem 2.5rem rgba(0, 0, 0, 0.08)
+		border-radius: 1.5rem
+		max-width: 41.25rem
+		padding: 2rem
+.text-quote
+	h2
+		font-size: 1.75rem
+		line-height: 100%
+		letter-spacing: -1%
+		margin-bottom: 1rem
+		color: #ffffff
+		+med
+		&:last-child
+			margin-bottom: 0
+	h3
+		font-size: 18px
+		line-height: 100%
+		letter-spacing: -1%
+		margin-bottom: 1rem
+		color: #ffffff
+		+med
+		&:last-child
+			margin-bottom: 0
+	h4
+		font-size: 1rem
+		line-height: 100%
+		letter-spacing: -1%
+		margin-bottom: 1rem
+		color: #ffffff
+		+med
+		&:last-child
+			margin-bottom: 0
+	p
+		font-size: 1rem
+		line-height: 160%
+		margin-bottom: 1rem
+		color: #ffffff
+		&:last-child
+			margin-bottom: 0
+	ul
+		li
+			position: relative
+			font-size: 1rem
+			line-height: 160%
+			padding-left: 1.5625rem
+			color: #ffffff
+			&::after
+				content: ''
+				position: absolute
+				display: block
+				width: .3125rem
+				height: .3125rem
+				border-radius: 100%
+				background: #ffffff
+				left: .5625rem
+				top: .5625rem
+	ol
+		padding-left: 1.25rem
+		li
+			color: #ffffff
+	a
+		text-decoration: underline
+		color: #6990A1
+.text-aticale
+	h2
+		font-size: 1.75rem
+		line-height: 100%
+		letter-spacing: -1%
+		margin-bottom: 1rem
+		color: #ffffff
+		+med
+		&:last-child
+			margin-bottom: 0
+	h3
+		font-size: 18px
+		line-height: 100%
+		letter-spacing: -1%
+		margin-bottom: 1rem
+		color: #ffffff
+		+med
+		&:last-child
+			margin-bottom: 0
+	h4
+		font-size: 1rem
+		line-height: 100%
+		letter-spacing: -1%
+		margin-bottom: 1rem
+		color: #ffffff
+		+med
+		&:last-child
+			margin-bottom: 0
+	p
+		font-size: 1rem
+		line-height: 160%
+		margin-bottom: 1rem
+		color: #CCD4D7
+		&:last-child
+			margin-bottom: 0
+	ul
+		li
+			position: relative
+			font-size: 1rem
+			line-height: 160%
+			padding-left: 1.5625rem
+			color: #CCD4D7
+			&::after
+				content: ''
+				position: absolute
+				display: block
+				width: .3125rem
+				height: .3125rem
+				border-radius: 100%
+				background: #CCD4D7
+				left: .5625rem
+				top: .5625rem
+	ol
+		padding-left: 1.25rem
+		li
+			color: #CCD4D7
+	a
+		text-decoration: underline
+		color: #6990A1
+
+.article-page-advice__wrapper
+	display: flex
+	align-items: center
+	justify-content: center
+
+.article-page-advice
+	display: block
+	max-width: 41.25rem
+	background-color: #193B4A
+	border-radius: 1.5rem
+	padding: 2rem
+	&__header
+		font-size: 1.75rem
+		line-height: 100%
+		letter-spacing: -0.01em
+		color: #ffffff
+		padding-bottom: 1rem
+		margin-bottom: 1rem
+		border-bottom: .0625rem solid #6990A1
+		+med
+
+@media screen and ( max-width: 1024px )
+	.article-page
+		padding-bottom: 3.125rem
+		&-main-image
+			margin-bottom: 2rem
+		.image
+			height: 21.875rem
+		&__title
+			font-size: 2.75rem
+			margin-bottom: 2rem
+		&__content
+			padding-left: 0
+			padding-right: 0
+		&-info
+			padding: 1.5rem
+			border-radius: 1.5rem
+			max-width: 100%
+			margin-bottom: 2rem
+			&-author
+				&__texts
+					gap: 0
+				&__name
+					font-size: .875rem
+				&__text
+					font-size: .75rem
+				&__avatar
+					.image
+						width: 3rem
+						height: 3rem
+			&__header
+				display: flex
+				flex-direction: column
+				justify-content: flex-start
+				align-items: flex-start
+			&__text
+				margin-top: 1.5rem
+				p
+					font-size: .875rem
+			&-wrapper
+				justify-content: flex-start
+				padding-top: 1.5rem
+			&-time
+				font-size: .75rem
+			&-categorys
+				ul
+					justify-content: flex-start
+					li
+						padding-left: 1.25rem
+						&::after
+							left: .5625rem
+							top: .75rem
+							bottom: auto
+						a
+							font-size: .75rem
+		&-text
+			margin-bottom: 2rem
+			&:last-child
+				margin-bottom: 0
+		&-image
+			margin-bottom: 1.5rem
+			&:last-child
+				margin-bottom: 0
+			.image
+				width: 100%
+				height: 21.875rem
+		&-quote__wrapper
+			margin-bottom: 2rem
+		&-quote
+			max-width: 100%
+			padding: 1.5rem
+	.text-quote
+		h2
+			font-size: 1.5rem
+			&:last-child
+				margin-bottom: 0
+		h3
+			font-size: 1rem
+			&:last-child
+				margin-bottom: 0
+		h4
+			font-size: .875rem
+			&:last-child
+				margin-bottom: 0
+		p
+			font-size: .875rem
+			&:last-child
+				margin-bottom: 0
+		ul
+			li
+				font-size: .875rem
+				padding-left: 1.375rem
+				&::after
+					left: .5rem
+					top: .4375rem
+		ol
+			padding-left: 1.25rem
+			li
+				font-size: .875rem
+				color: #CCD4D7
+		a
+			text-decoration: underline
+			color: #6990A1
+	.text-aticale
+		h2
+			font-size: 1.5rem
+			&:last-child
+				margin-bottom: 0
+		h3
+			font-size: 1rem
+			&:last-child
+				margin-bottom: 0
+		h4
+			font-size: .875rem
+			&:last-child
+				margin-bottom: 0
+		p
+			font-size: .875rem
+			&:last-child
+				margin-bottom: 0
+		ul
+			li
+				font-size: .875rem
+				padding-left: 1.375rem
+				&::after
+					left: .5rem
+					top: .4375rem
+		ol
+			padding-left: 1.25rem
+			li
+				font-size: .875rem
+				color: #CCD4D7
+		a
+			text-decoration: underline
+			color: #6990A1
+
+	.article-page-advice
+		max-width: 100%
+		padding: 1.5rem
+		&__header
+			font-size: 1.5rem
+			line-height: 100%
+
+@media screen and ( max-width: 576px )
+	.article-page
+		&-main-image
+		.image
+			height: 21.5625rem
+		&-image
+			.image
+				height: 14.375rem

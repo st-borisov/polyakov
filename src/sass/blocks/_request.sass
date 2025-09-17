@@ -1,4 +1,18 @@
 .request
+	&__block
+		position: relative
+		&::before
+			content: ''
+			width: 70rem
+			height: 56.25rem
+			background: #015D74
+			opacity: 0.5
+			filter: blur(12.5rem)
+			position: absolute
+			top: 9.75rem
+			left: 21.25rem
+			z-index: -1
+			border-radius: 70%
 	&__title
 		max-width: 41.25rem
 		width: 100%
@@ -32,6 +46,10 @@
 			margin-top: 3rem
 
 	&-two
+		.request__block
+			&::before
+				top: 21.75rem
+				left: -12.0625rem
 		.request-desc
 			&__contacts
 				gap: 2rem
@@ -66,3 +84,17 @@
 				justify-content: space-between
 			&__sub
 				font-size: .875rem
+		&__block
+			&::before
+				width: 44.3125rem
+				height: 35.625rem
+				top: auto
+				bottom: 1.375rem
+				left: -50%
+		&-two
+			.request
+				&__block
+					&::before
+						bottom: 8rem
+						top: auto
+						left: -50%

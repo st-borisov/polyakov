@@ -143,7 +143,18 @@
 
 @media screen and ( max-width: 576px )
 	.header
+		padding: 1.5rem 0
 		.container
 			padding: 0 1rem
 		&__logo
 			max-width: 15.5625rem
+		&-burger
+			width: 1.125rem
+			height: 1rem
+			&__line
+				height: .125rem
+				top: calc(50% - .0625rem)
+			&::before
+				height: .125rem
+			&::after
+				height: .125rem

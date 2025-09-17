@@ -411,6 +411,8 @@ svg
 	background-color: rgba(255, 255, 255, 0.1)
 	border-radius: 1.5rem
 	overflow: hidden
+	max-height: 33.625rem
+	min-height: 33.625rem
 	&.no-image
 		.blog-card
 			&__image
@@ -453,6 +455,92 @@ svg
 	text-decoration: underline
 	line-height: 1
 	+semi
+
+.breadcrumbs
+	margin: 11.75rem 0 2rem 0
+	font-size: .875rem
+	z-index: 100
+	&-line
+		opacity: 0.5
+		margin: 0 .5rem
+	&-link
+		color: var(--text)
+	&-title
+		opacity: 0.5
+
+.types
+	&-items
+		display: flex
+		flex-wrap: wrap
+		gap: 1rem
+	&-item
+		border-radius: 1.5rem
+		background-color: rgba(255, 255, 255, 0.1)
+		box-shadow: 0px .25rem 2.5rem 0px rgba(0, 0, 0, 0.08)
+		color: var(--text)
+		letter-spacing: 0.05em
+		font-size: 1.25rem
+		line-height: 1
+		padding: .875rem 1.5rem
+	&-more
+		margin-top: 2rem
+		+semi
+		letter-spacing: 0.05em
+		line-height: 1
+		&-text
+			text-decoration: underline
+
+.service-card
+	box-shadow: 0px .25rem 2.5rem 0px rgba(0, 0, 0, 0.08)
+	background-color: rgba(255, 255, 255, 0.1)
+	border-radius: 1.5rem
+	width: 100%
+	height: 100%
+	max-height: 27.125rem
+	&__wrapper
+		height: 100%
+		padding: 2rem
+	&__avatar
+		width: 4rem
+		height: 4rem
+		border-radius: 1rem
+		background-color: rgba(255, 255, 255, 0.16)
+		+center
+		&--icon
+			width: 1.5rem
+			height: 1.5rem
+	&__content
+		margin-top: 5rem
+	&__text
+		margin-top: 2rem
+		display: -webkit-box
+		-webkit-box-orient: vertical
+		-webkit-line-clamp: 5
+		overflow: hidden
+
+.tabs
+	&__pane
+		display: none
+		&_show
+			display: block
+
+.categories
+	display: flex
+	border-bottom: .0625rem solid #195061
+	&-btn
+		color: var(--accent)
+		text-transform: uppercase
+		letter-spacing: 0.05em
+		line-height: 1
+		padding: 0 1rem 1.375rem
+		+semi
+		&.active
+			color: var(--text)
+			border-bottom: .125rem solid
+		&__icon
+			display: none
+		&__arrow
+			display: none
 
 @media screen and ( min-width: 1920px	)
 	html
@@ -524,3 +612,44 @@ svg
 			padding: 1.5rem
 		&__city
 			font-size: .875rem
+
+	.breadcrumbs
+		margin: 7.25rem 0 2rem 0
+
+	.types
+		&-item
+			font-size: 1rem
+
+	.categories
+		flex-direction: column
+		border: none
+		gap: .5rem
+		&-btn
+			background-color: rgba(255, 255, 255, 0.1)
+			box-shadow: 0px .25rem 2.5rem 0px rgba(0, 0, 0, 0.08)
+			border-radius: 1rem
+			padding: .75rem
+			color: #fff
+			text-transform: inherit
+			font-size: 1.125rem
+			+med
+			letter-spacing: 0
+			min-height: 4.125rem
+			+between-center
+			&__group
+				+center-stroke
+				gap: 1rem
+			&__icon
+				background-color: rgba(255, 255, 255, 0.16)
+				border-radius: .5rem
+				width: 2.625rem
+				height: 2.625rem
+				+center
+				.box
+					width: 1.5rem
+					height: 1.5rem
+			&__arrow
+				width: 1.5rem
+				display: flex
+			&.active
+				border: .0625rem solid #fff

@@ -1,0 +1,37 @@
+.services
+	&__content
+		margin-top: 4rem
+	&__types
+		margin-top: 3rem
+		padding: 0
+	&__cards
+		margin-top: 6.25rem
+		gap: 2rem
+		+col-four
+
+@media screen and ( max-width: 1024px )
+	.services
+		&__cards
+			margin-top: 4rem
+			+col-two
+
+@media screen and ( max-width: 576px )
+	.services
+		&__categories
+			.categories-btn
+				&:first-child
+					display: none
+		&__cards
+			display: none
+		&__types
+			display: block
+			margin-top: 4rem
+
+	.services-category
+		.services
+			&__categories
+				.categories-btn
+					&:first-child
+						display: flex
+			&__cards
+				+col-one

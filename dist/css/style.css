@@ -2013,6 +2013,7 @@ svg path {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.25rem;
+  color: #fff;
 }
 
 .blog-card__category::before {
@@ -2094,6 +2095,16 @@ svg path {
   width: 100%;
   height: 100%;
   max-height: 27.125rem;
+  position: relative;
+}
+
+.service-card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .service-card__wrapper {
@@ -2146,7 +2157,10 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border-bottom: 0.0625rem solid #195061;
+  gap: 2rem;
 }
 
 .categories-btn {
@@ -2154,7 +2168,7 @@ svg path {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 1;
-  padding: 0 1rem 1.375rem;
+  padding: 0 0 1.375rem;
   font-family: Inter;
   font-weight: 600;
 }
@@ -2759,6 +2773,24 @@ svg path {
 
 .main-reviews-benefits__btn {
   margin-top: 3rem;
+}
+
+.services__content {
+  margin-top: 4rem;
+}
+
+.services__types {
+  margin-top: 3rem;
+  padding: 0;
+}
+
+.services__cards {
+  margin-top: 6.25rem;
+  gap: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .reviews__content {
@@ -3686,6 +3718,14 @@ svg path {
     gap: 1.5rem;
   }
 
+  .services__cards {
+    margin-top: 4rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .reviews__content {
     margin-top: 3rem;
   }
@@ -4138,6 +4178,10 @@ svg path {
     padding: 1.5rem 0;
   }
 
+  .header::before {
+    height: 10rem;
+  }
+
   .header .container {
     padding: 0 1rem;
   }
@@ -4397,6 +4441,32 @@ svg path {
   .main-reviews-slider__pagination {
     max-width: 15rem;
     margin: auto;
+  }
+
+  .services__categories .categories-btn:first-child {
+    display: none;
+  }
+
+  .services__cards {
+    display: none;
+  }
+
+  .services__types {
+    display: block;
+    margin-top: 4rem;
+  }
+
+  .services-category .services__categories .categories-btn:first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .services-category .services__cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .reviews__cards {

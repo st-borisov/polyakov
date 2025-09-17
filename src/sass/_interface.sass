@@ -442,6 +442,7 @@ svg
 	&__category
 		+center-stroke
 		gap: .25rem
+		color: #fff
 		&::before
 			content: '・'
 
@@ -497,6 +498,14 @@ svg
 	width: 100%
 	height: 100%
 	max-height: 27.125rem
+	position: relative
+	&__link
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 2
 	&__wrapper
 		height: 100%
 		padding: 2rem
@@ -526,13 +535,15 @@ svg
 
 .categories
 	display: flex
+	flex-wrap: wrap
 	border-bottom: .0625rem solid #195061
+	gap: 2rem
 	&-btn
 		color: var(--accent)
 		text-transform: uppercase
 		letter-spacing: 0.05em
 		line-height: 1
-		padding: 0 1rem 1.375rem
+		padding: 0 0 1.375rem
 		+semi
 		&.active
 			color: var(--text)

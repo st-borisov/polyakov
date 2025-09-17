@@ -1,88 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta property="og:title" content="">
-	<meta property="og:description" content="">
-	<meta property="og:image" content="">
-	<meta property="og:type" content="">
-	<meta property="og:url" content="">
-	<title>Услуги</title>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250917235102">
-</head>
+@@include('html/head.html', {
+"title": "Услуги (категория)"
+})
 
-<body class="services-page">
-	<header class="header">
-	<div class="container">
-		<div class="header__block">
-			<a href="#" class="header__logo">
-				<span class="header__logo--img icon">
-					<img src="img/header/logo.svg" alt="Лого Поляков и команда">
-				</span>
-			</a>
-			<div class="header__menu">
-				<ul>
-					<li><a href="">Об агентстве</a></li>
-					<li><a href="">Услуги</a></li>
-					<li><a href="">Отзывы</a></li>
-					<li><a href="">Блог</a></li>
-					<li><a href="">Контакты</a></li>
-				</ul>
-			</div>
-			<div class="header__contacts">
-				<a href="tel:+79111234567" class="header__phone phone">+7 911 123 45 67</a>
-				<div class="header__socials socials">
-					<a href="#" target="_blank" rel="nofollow" class="socials-item">
-						<span class="socials-item__icon icon">
-							<img src="img/interface/tg.svg" alt="телеграм">
-						</span>
-					</a>
-					<a href="#" target="_blank" rel="nofollow" class="socials-item">
-						<span class="socials-item__icon icon">
-							<img src="img/interface/wa.svg" alt="whatsapp">
-						</span>
-					</a>
-				</div>
-			</div>
-			<div class="header-burger">
-				<span class="header-burger__line"></span>
-			</div>
-			<div class="header-burger-menu">
-				<div class="header__menu">
-					<ul>
-						<li><a href="">Об агентстве</a></li>
-						<li><a href="">Услуги</a></li>
-						<li><a href="">Отзывы</a></li>
-						<li><a href="">Блог</a></li>
-						<li><a href="">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="header__contacts">
-					<a href="tel:+79111234567" class="header__phone phone">+7 911 123 45 67</a>
-					<div class="header__socials socials">
-						<a href="#" target="_blank" rel="nofollow" class="socials-item">
-							<span class="socials-item__icon icon">
-								<img src="img/interface/tg.svg" alt="телеграм">
-							</span>
-						</a>
-						<a href="#" target="_blank" rel="nofollow" class="socials-item">
-							<span class="socials-item__icon icon">
-								<img src="img/interface/wa.svg" alt="whatsapp">
-							</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
+<body class="services-category-page">
+	@@include('html/header.html', {})
 	<main>
 
 		<div class="breadcrumbs">
@@ -96,22 +20,30 @@
 					</span>
 					<span class="breadcrumbs-line">/</span>
 					<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-						<span class="breadcrumbs-title" itemprop="name">Услуги</span>
+						<a href="#" itemprop="item">
+							<span class="breadcrumbs-link" itemprop="name">Услуги</span>
+							<meta itemprop="position" content="1">
+						</a>
+					</span>
+					<span class="breadcrumbs-line">/</span>
+					<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+						<span class="breadcrumbs-title" itemprop="name">Семейные вопросы</span>
 						<meta itemprop="position" content="2">
 					</span>
 				</div>
 			</div>
 		</div>
 
-		<section class="services section-mb">
+		<section class="services services-category section-mb">
 			<div class="container">
 				<div class="services__block">
 					<div class="services__header">
-						<h1 class="title-page services__title">Услуги детективного агентства</h1>
+						<h1 class="title-page services__title">Услуги детектива по
+							семейным вопросам</h1>
 					</div>
 					<div class="services__content">
 						<div class="services__categories categories">
-							<a href="#" class="categories-btn active">
+							<a href="#" class="categories-btn">
 								<span class="categories-btn__group">
 									<span class="categories-btn__name">Все улуги</span>
 								</span>
@@ -127,7 +59,7 @@
 								<span class="categories-btn__group">
 									<span class="categories-btn__icon">
 										<span class="box">
-											<img src="img/blog-page/user.svg" alt="иконка">
+											<img src="@img/blog-page/user.svg" alt="иконка">
 										</span>
 									</span>
 									<span class="categories-btn__name">Физическим лицам</span>
@@ -144,7 +76,7 @@
 								<span class="categories-btn__group">
 									<span class="categories-btn__icon">
 										<span class="box">
-											<img src="img/blog-page/government.svg" alt="иконка">
+											<img src="@img/blog-page/government.svg" alt="иконка">
 										</span>
 									</span>
 									<span class="categories-btn__name">Юридическим лицам</span>
@@ -157,11 +89,11 @@
 									</svg>
 								</span>
 							</a>
-							<a href="#" class="categories-btn">
+							<a href="#" class="categories-btn active">
 								<span class="categories-btn__group">
 									<span class="categories-btn__icon">
 										<span class="box">
-											<img src="img/services/family.svg" alt="иконка">
+											<img src="@img/services/family.svg" alt="иконка">
 										</span>
 									</span>
 									<span class="categories-btn__name">Семейные вопросы</span>
@@ -178,7 +110,7 @@
 								<span class="categories-btn__group">
 									<span class="categories-btn__icon">
 										<span class="box">
-											<img src="img/services/map-user.svg" alt="иконка">
+											<img src="@img/services/map-user.svg" alt="иконка">
 										</span>
 									</span>
 									<span class="categories-btn__name">Розыск людей</span>
@@ -195,7 +127,7 @@
 								<span class="categories-btn__group">
 									<span class="categories-btn__icon">
 										<span class="box">
-											<img src="img/services/map-treasure.svg" alt="иконка">
+											<img src="@img/services/map-treasure.svg" alt="иконка">
 										</span>
 									</span>
 									<span class="categories-btn__name">Розыск имущества</span>
@@ -209,24 +141,6 @@
 								</span>
 							</a>
 						</div>
-						<!-- Популярные услуги -->
-						<div class="main-services-types services__types">
-							<h3 class="item-title main-services-types__title">Популярные услуги</h3>
-							<div class="main-services-types__items types-items">
-								<a href="#" class="types-item">
-									<span>Измены</span>
-								</a>
-								<a href="#" class="types-item"><span>Розыск</span></a>
-								<a href="" class="types-item"><span>Наблюдение</span></a>
-								<a href="" class="types-item"><span>Проблемы с детьми</span></a>
-								<a href="" class="types-item"><span>Семейные проблемы</span></a>
-								<a href="" class="types-item"><span>Компромат</span></a>
-								<a href="" class="types-item"><span>Защита от преследования</span></a>
-								<a href="" class="types-item"><span>Противодействие слежке</span></a>
-								<a href="" class="types-item"><span>Должники</span></a>
-							</div>
-							<div class="types-more">+ <span class="types-more-text">Ещё <span>11 видов</span></span></div>
-						</div>
 						<!--  -->
 						<div class="services__cards">
 							<div class="service-card">
@@ -235,7 +149,7 @@
 									<div class="service-card__header">
 										<div class="service-card__avatar">
 											<div class="service-card__avatar--icon box">
-												<img src="img/services/icon-1.svg" alt="иконка">
+												<img src="@img/services/icon-1.svg" alt="иконка">
 											</div>
 										</div>
 									</div>
@@ -254,7 +168,7 @@
 									<div class="service-card__header">
 										<div class="service-card__avatar">
 											<div class="service-card__avatar--icon box">
-												<img src="img/services/icon-1.svg" alt="иконка">
+												<img src="@img/services/icon-1.svg" alt="иконка">
 											</div>
 										</div>
 									</div>
@@ -273,7 +187,7 @@
 									<div class="service-card__header">
 										<div class="service-card__avatar">
 											<div class="service-card__avatar--icon box">
-												<img src="img/services/icon-1.svg" alt="иконка">
+												<img src="@img/services/icon-1.svg" alt="иконка">
 											</div>
 										</div>
 									</div>
@@ -292,7 +206,7 @@
 									<div class="service-card__header">
 										<div class="service-card__avatar">
 											<div class="service-card__avatar--icon box">
-												<img src="img/services/icon-1.svg" alt="иконка">
+												<img src="@img/services/icon-1.svg" alt="иконка">
 											</div>
 										</div>
 									</div>
@@ -311,7 +225,7 @@
 									<div class="service-card__header">
 										<div class="service-card__avatar">
 											<div class="service-card__avatar--icon box">
-												<img src="img/services/icon-1.svg" alt="иконка">
+												<img src="@img/services/icon-1.svg" alt="иконка">
 											</div>
 										</div>
 									</div>
@@ -330,7 +244,7 @@
 									<div class="service-card__header">
 										<div class="service-card__avatar">
 											<div class="service-card__avatar--icon box">
-												<img src="img/services/icon-1.svg" alt="иконка">
+												<img src="@img/services/icon-1.svg" alt="иконка">
 											</div>
 										</div>
 									</div>
@@ -349,97 +263,11 @@
 			</div>
 		</section>
 
-		<!-- Не дайте проблеме усугубиться — действуйте сейчас -->
-<section class="section request request-two">
-	<div class="container">
-		<div class="request__block">
-			<div class="request__header">
-				<h2 class="section-title request__title"><span class="accent">Не дайте</span> проблеме усугубиться — <span
-						class="accent">действуйте</span> сейчас
-				</h2>
-			</div>
-			<div class="request__content">
-				<div class="request__image box">
-					<picture><source srcset="img/request/image-2.webp" type="image/webp"><img src="img/request/image-2.jpg" alt="фото"></picture>
-				</div>
-				<div class="request__info">
-					<div class="request-desc">
-						<div class="request-desc__header">
-							<h3 class="request-desc__title item-title">Виталий Владимирович</h3>
-							<p class="request-desc__work">Руководитель агентства</p>
-						</div>
-						<div class="request-desc__contacts">
-							<div class="request-desc__left">
-								<a href="tel:+79111234567" class="request-desc__phone phone">+7 911 123 45 67</a>
-								<a href="mailto:help@polyakov.ru" class="request-desc__email email">help@polyakov.ru</a>
-							</div>
-							<div class="request-desc__socials socials">
-								<a href="#" target="_blank" rel="nofollow" class="socials-item">
-									<span class="socials-item__icon icon">
-										<img src="img/interface/tg.svg" alt="телеграм">
-									</span>
-								</a>
-								<a href="#" target="_blank" rel="nofollow" class="socials-item">
-									<span class="socials-item__icon icon">
-										<img src="img/interface/wa.svg" alt="whatsapp">
-									</span>
-								</a>
-							</div>
-						</div>
-						<div class="request-desc__example">
-							<p class="request-desc__name name">Бесплатная 20-ти минутная консультация:<br>
-								Четко определю чем можем помочь.</p>
-							<div class="request-desc__text text">
-								<p>Конфиденциально. Без навязывания услуг.</p>
-							</div>
-						</div>
-					</div>
-					<a href="#" class="request-desc__btn btn-light">Получить консультацию</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+		@@include('html/request.html', {})
 
 	</main>
-	<footer class="footer">
-	<div class="container">
-		<div class="footer__block">
-			<div class="footer__top">
-				<a href="mailto:help@polyakov.ru" class="footer__email email">help@polyakov.ru</a>
-				<div class="footer__menu">
-					<ul>
-						<li><a href="">Об агентстве</a></li>
-						<li><a href="">Услуги</a></li>
-						<li><a href="">Отзывы</a></li>
-						<li><a href="">Блог</a></li>
-						<li><a href="">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="footer__contacts">
-					<a href="tel:+79111234567" class="footer__phone phone">+7 911 123 45 67</a>
-					<div class="footer__socials socials">
-						<a href="#" target="_blank" rel="nofollow" class="socials-item">
-							<span class="socials-item__icon icon">
-								<img src="img/interface/tg.svg" alt="телеграм">
-							</span>
-						</a>
-						<a href="#" target="_blank" rel="nofollow" class="socials-item">
-							<span class="socials-item__icon icon">
-								<img src="img/interface/wa.svg" alt="whatsapp">
-							</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="footer__bottom">
-				<p class="footer__copyright">© 2007-2025. ИП Поляков В.В. Все права защищены</p>
-				<a href="#" target="_blank" class="footer__privacy">Политика конфиденциальности</a>
-			</div>
-		</div>
-	</div>
-</footer>
-	<script src="js/app.min.js?_v=20250917235102"></script>
+	@@include('html/footer.html', {})
+	<script src="js/app.min.js"></script>
 </body>
 
 </html>

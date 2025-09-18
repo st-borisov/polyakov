@@ -414,12 +414,6 @@ svg
 	overflow: hidden
 	max-height: 33.625rem
 	min-height: 33.625rem
-	&.no-image
-		.blog-card
-			&__image
-				display: none
-			&__content
-				padding: 2rem
 	&__link
 		position: absolute
 		top: 0
@@ -432,7 +426,7 @@ svg
 		height: 15.25rem
 		border-radius: 1.5rem
 	&__content
-		padding: 1.5rem 2rem 2rem 2rem
+		padding: 2rem
 		+column
 		gap: 1.5rem
 	&__info
@@ -446,6 +440,10 @@ svg
 		color: #fff
 		&::before
 			content: '・'
+	&__text
+		overflow: hidden
+		p
+			word-break: break-word
 
 .phone
 	+semi
@@ -502,8 +500,8 @@ svg
 	background-color: rgba(255, 255, 255, 0.1)
 	border-radius: 1.5rem
 	width: 100%
-	height: 100%
 	max-height: 27.125rem
+	min-height: 27.125rem
 	position: relative
 	&__link
 		position: absolute
@@ -528,10 +526,9 @@ svg
 		margin-top: 5rem
 	&__text
 		margin-top: 2rem
-		display: -webkit-box
-		-webkit-box-orient: vertical
-		-webkit-line-clamp: 5
 		overflow: hidden
+		p
+			word-break: break-word
 
 .tabs
 	&__pane
@@ -674,3 +671,11 @@ svg
 				display: flex
 			&.active
 				border: .0625rem solid #fff
+
+	.blog-card
+		max-height: 28.875rem
+		min-height: 28.875rem
+		&__image
+			height: 12.5rem
+		&__content
+			padding: 1.5rem

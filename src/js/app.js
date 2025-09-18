@@ -174,7 +174,7 @@ for (let i = 0, length = tabs.length; i < length; i++) {
 }
 
 
-/*  */
+/* кнопка, раскрывающая теги в услугах */
 document.addEventListener("DOMContentLoaded", () => {
 	const maxVisible = 10;
 
@@ -187,14 +187,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		return "видов";
 	}
 
-	// обходим все блоки .types-items
 	document.querySelectorAll(".types-items").forEach((block) => {
 		const items = block.querySelectorAll(".types-item");
 		const btn = block.nextElementSibling?.classList.contains("types-more")
 			? block.nextElementSibling
 			: null;
 
-		if (!btn) return; // если кнопки рядом нет, пропускаем
+		if (!btn) return;
 
 		const btnText = btn.querySelector(".types-more-text");
 		const total = items.length;
@@ -211,3 +210,206 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 });
+
+
+/* карточка блога */
+(function () {
+	const toNum = v => isNaN(parseFloat(v)) ? 0 : parseFloat(v);
+
+	function measureFullHeight(el) {
+		const clone = el.cloneNode(true);
+		const rect = el.getBoundingClientRect();
+		clone.style.width = Math.max(0, rect.width) + 'px';
+		clone.style.position = 'absolute';
+		clone.style.visibility = 'hidden';
+		clone.style.left = '-9999px';
+		clone.style.top = '-9999px';
+		clone.style.display = 'block';
+		clone.style.webkitBoxOrient = 'unset';
+		clone.style.webkitLineClamp = 'unset';
+		clone.style.overflow = 'visible';
+		document.body.appendChild(clone);
+		const h = clone.scrollHeight;
+		document.body.removeChild(clone);
+		return h;
+	}
+
+	function applyClamp(card) {
+		const content = card.querySelector('.blog-card__content');
+		if (!content) return;
+		const textBlock = content.querySelector('.blog-card__text');
+		if (!textBlock) return;
+		const p = textBlock.querySelector('p');
+		if (!p) return;
+
+		p.style.webkitLineClamp = 'unset';
+		p.style.display = 'block';
+		p.style.overflow = 'visible';
+		p.style.textOverflow = 'unset';
+		p.style.webkitBoxOrient = 'unset';
+
+		const fullHeight = measureFullHeight(p);
+
+		const cardRect = card.getBoundingClientRect();
+		const pRect = p.getBoundingClientRect();
+		const contentStyle = getComputedStyle(content);
+		const paddingBottom = toNum(contentStyle.paddingBottom);
+
+		const allowedBottom = cardRect.bottom - paddingBottom;
+
+		let availableHeight = allowedBottom - pRect.top;
+
+		const pStyle = getComputedStyle(p);
+		const pMarginBottom = toNum(pStyle.marginBottom);
+		availableHeight = availableHeight - pMarginBottom;
+
+		let lineHeight = parseFloat(pStyle.lineHeight);
+		if (isNaN(lineHeight)) {
+			lineHeight = parseFloat(pStyle.fontSize) * 1.2;
+		}
+
+		if (availableHeight <= 0) {
+			p.style.display = '-webkit-box';
+			p.style.webkitBoxOrient = 'vertical';
+			p.style.webkitLineClamp = '1';
+			p.style.overflow = 'hidden';
+			p.style.textOverflow = 'ellipsis';
+			return;
+		}
+
+		if (fullHeight <= availableHeight) {
+			p.style.display = 'block';
+			p.style.webkitLineClamp = 'unset';
+			p.style.overflow = 'visible';
+			p.style.textOverflow = 'unset';
+			return;
+		}
+
+		let lines = Math.floor(availableHeight / lineHeight);
+		if (lines < 1) lines = 1;
+
+		p.style.display = '-webkit-box';
+		p.style.webkitBoxOrient = 'vertical';
+		p.style.webkitLineClamp = String(lines);
+		p.style.overflow = 'hidden';
+		p.style.textOverflow = 'ellipsis';
+	}
+
+	function truncateAllBlogCards() {
+		document.querySelectorAll('.blog-card').forEach(applyClamp);
+	}
+
+	window.addEventListener('load', truncateAllBlogCards);
+	window.addEventListener('DOMContentLoaded', truncateAllBlogCards);
+
+	let resizeTimer = null;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(truncateAllBlogCards, 80);
+	});
+
+})();
+
+
+/* карточка услуги */
+(function () {
+	const toNum = v => isNaN(parseFloat(v)) ? 0 : parseFloat(v);
+
+	function measureFullHeight(el) {
+		const clone = el.cloneNode(true);
+		const rect = el.getBoundingClientRect();
+		clone.style.width = Math.max(0, rect.width) + 'px';
+		clone.style.position = 'absolute';
+		clone.style.visibility = 'hidden';
+		clone.style.left = '-9999px';
+		clone.style.top = '-9999px';
+		clone.style.display = 'block';
+		clone.style.webkitBoxOrient = 'unset';
+		clone.style.webkitLineClamp = 'unset';
+		clone.style.overflow = 'visible';
+		document.body.appendChild(clone);
+		const h = clone.scrollHeight;
+		document.body.removeChild(clone);
+		return h;
+	}
+
+	function applyClamp(card) {
+		const content = card.querySelector('.service-card__wrapper');
+		if (!content) return;
+		const textBlock = content.querySelector('.service-card__text');
+		if (!textBlock) return;
+		const p = textBlock.querySelector('p');
+		if (!p) return;
+
+		p.style.webkitLineClamp = 'unset';
+		p.style.display = 'block';
+		p.style.overflow = 'visible';
+		p.style.textOverflow = 'unset';
+		p.style.webkitBoxOrient = 'unset';
+
+		const fullHeight = measureFullHeight(p);
+
+		const cardRect = card.getBoundingClientRect();
+		const pRect = p.getBoundingClientRect();
+		const contentStyle = getComputedStyle(content);
+		const paddingBottom = toNum(contentStyle.paddingBottom);
+
+		const allowedBottom = cardRect.bottom - paddingBottom;
+
+		let availableHeight = allowedBottom - pRect.top;
+
+		const pStyle = getComputedStyle(p);
+		const pMarginBottom = toNum(pStyle.marginBottom);
+		availableHeight = availableHeight - pMarginBottom;
+
+		let lineHeight = parseFloat(pStyle.lineHeight);
+		if (isNaN(lineHeight)) {
+			lineHeight = parseFloat(pStyle.fontSize) * 1.2;
+		}
+
+		if (availableHeight <= 0) {
+			p.style.display = '-webkit-box';
+			p.style.webkitBoxOrient = 'vertical';
+			p.style.webkitLineClamp = '1';
+			p.style.overflow = 'hidden';
+			p.style.textOverflow = 'ellipsis';
+			return;
+		}
+
+		if (fullHeight <= availableHeight) {
+			p.style.display = 'block';
+			p.style.webkitLineClamp = 'unset';
+			p.style.overflow = 'visible';
+			p.style.textOverflow = 'unset';
+			return;
+		}
+
+		let lines = Math.floor(availableHeight / lineHeight);
+		if (lines < 1) lines = 1;
+
+		p.style.display = '-webkit-box';
+		p.style.webkitBoxOrient = 'vertical';
+		p.style.webkitLineClamp = String(lines);
+		p.style.overflow = 'hidden';
+		p.style.textOverflow = 'ellipsis';
+	}
+
+	function truncateAllBlogCards() {
+		document.querySelectorAll('.service-card').forEach(applyClamp);
+	}
+
+	window.addEventListener('load', truncateAllBlogCards);
+	window.addEventListener('DOMContentLoaded', truncateAllBlogCards);
+
+	let resizeTimer = null;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(truncateAllBlogCards, 80);
+	});
+
+})();
+
+
+
+
+

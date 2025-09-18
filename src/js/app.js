@@ -4,18 +4,7 @@ flsFunctions.isWebp();
 
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-//import gsap from 'gsap';
-//import ScrollTrigger from 'gsap/dist/ScrollTrigger.min.js';
-//import $ from "jquery";
-//import 'jquery-ui/ui/widgets/checkboxradio.js';
-//import 'jquery-ui/ui/widgets/selectmenu.js';
 
-
-/* jquery-ui */
-/* $(function () {
-	$(".catalog-block-type__list input").checkboxradio();
-	$(".select select").selectmenu();
-}); */
 
 /* Плавный скролл по ссылкам меню */
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
@@ -185,91 +174,40 @@ for (let i = 0, length = tabs.length; i < length; i++) {
 }
 
 
-/* accordion */
-const accordions = document.querySelectorAll('.accordion');
+/*  */
+document.addEventListener("DOMContentLoaded", () => {
+	const maxVisible = 10;
 
-class ItcAccordion {
-	constructor(target, config) {
-		this._el = typeof target === 'string' ? document.querySelector(target) : target;
-		const defaultConfig = {
-			alwaysOpen: true,
-			duration: 350
-		};
-		this._config = Object.assign(defaultConfig, config);
-		this.addEventListener();
+	function getWordForm(n) {
+		n = Math.abs(n) % 100;
+		const n1 = n % 10;
+		if (n > 10 && n < 20) return "видов";
+		if (n1 > 1 && n1 < 5) return "вида";
+		if (n1 === 1) return "вид";
+		return "видов";
 	}
-	addEventListener() {
-		this._el.addEventListener('click', (e) => {
-			const elHeader = e.target.closest('.accordion__header');
-			if (!elHeader) {
-				return;
-			}
-			if (!this._config.alwaysOpen) {
-				const elOpenItem = this._el.querySelector('.accordion__item_show');
-				if (elOpenItem) {
-					elOpenItem !== elHeader.parentElement ? this.toggle(elOpenItem) : null;
-				}
-			}
-			this.toggle(elHeader.parentElement);
-		});
-	}
-	show(el) {
-		const elBody = el.querySelector('.accordion__body');
-		if (elBody.classList.contains('collapsing') || el.classList.contains('accordion__item_show')) {
-			return;
-		}
-		elBody.style['display'] = 'block';
-		const height = elBody.offsetHeight;
-		elBody.style['height'] = 0;
-		elBody.style['overflow'] = 'hidden';
-		elBody.style['transition'] = `height ${this._config.duration}ms ease`;
-		elBody.classList.add('collapsing');
-		el.classList.add('accordion__item_slidedown');
-		elBody.offsetHeight;
-		elBody.style['height'] = `${height}px`;
-		window.setTimeout(() => {
-			elBody.classList.remove('collapsing');
-			el.classList.remove('accordion__item_slidedown');
-			elBody.classList.add('collapse-body');
-			el.classList.add('accordion__item_show');
-			elBody.style['display'] = '';
-			elBody.style['height'] = '';
-			elBody.style['transition'] = '';
-			elBody.style['overflow'] = '';
-		}, this._config.duration);
-	}
-	hide(el) {
-		const elBody = el.querySelector('.accordion__body');
-		if (elBody.classList.contains('collapsing') || !el.classList.contains('accordion__item_show')) {
-			return;
-		}
-		elBody.style['height'] = `${elBody.offsetHeight}px`;
-		elBody.offsetHeight;
-		elBody.style['display'] = 'block';
-		elBody.style['height'] = 0;
-		elBody.style['overflow'] = 'hidden';
-		elBody.style['transition'] = `height ${this._config.duration}ms ease`;
-		elBody.classList.remove('collapse');
-		el.classList.remove('accordion__item_show');
-		elBody.classList.add('collapsing');
-		window.setTimeout(() => {
-			elBody.classList.remove('collapsing');
-			elBody.classList.add('collapse-body');
-			elBody.style['display'] = '';
-			elBody.style['height'] = '';
-			elBody.style['transition'] = '';
-			elBody.style['overflow'] = '';
-		}, this._config.duration);
-	}
-	toggle(el) {
-		el.classList.contains('accordion__item_show') ? this.hide(el) : this.show(el);
-	}
-}
 
-if (accordions.length > 0) {
-	accordions.forEach(accordion => {
-		new ItcAccordion(accordion, {
-			alwaysOpen: false,
+	// обходим все блоки .types-items
+	document.querySelectorAll(".types-items").forEach((block) => {
+		const items = block.querySelectorAll(".types-item");
+		const btn = block.nextElementSibling?.classList.contains("types-more")
+			? block.nextElementSibling
+			: null;
+
+		if (!btn) return; // если кнопки рядом нет, пропускаем
+
+		const btnText = btn.querySelector(".types-more-text");
+		const total = items.length;
+
+		if (total > maxVisible) {
+			const hiddenCount = total - maxVisible;
+			btn.style.display = "inline-block";
+			btnText.textContent = `Ещё ${hiddenCount} ${getWordForm(hiddenCount)}`;
+		}
+
+		btn.addEventListener("click", () => {
+			items.forEach(item => item.classList.add("show"));
+			btn.style.display = "none";
 		});
 	});
-}
+});

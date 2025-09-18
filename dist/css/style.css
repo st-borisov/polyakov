@@ -2080,7 +2080,19 @@ svg path {
   padding: 0.875rem 1.5rem;
 }
 
+.types-item:nth-child(n+11) {
+  display: none;
+}
+
+.types-item.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .types-more {
+  cursor: pointer;
+  display: none;
   margin-top: 2rem;
   font-family: Inter;
   font-weight: 600;
@@ -4789,7 +4801,7 @@ svg path {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .article-page .image {
+  .article-page-main-image .image {
     height: 21.5625rem;
   }
 

@@ -483,7 +483,13 @@ svg
 		font-size: 1.25rem
 		line-height: 1
 		padding: .875rem 1.5rem
+		&:nth-child(n+11)
+			display: none
+		&.show
+			display: flex
 	&-more
+		cursor: pointer
+		display: none
 		margin-top: 2rem
 		+semi
 		letter-spacing: 0.05em

@@ -1,0 +1,38 @@
+.about-main
+	&__content
+		margin-top: 6.25rem
+	&-desc
+		+col-two
+		gap: 6.125rem
+		&__text
+			opacity: 1
+	&-benefits
+		margin-top: 6.25rem
+		+center-stroke
+		justify-content: flex-end
+		gap: 4rem
+		&__image
+			.box
+				width: 19.75rem
+				height: 29.625rem
+				border-radius: 1rem
+		&__list
+			max-width: 38.125rem
+			width: 100%
+
+@media screen and ( max-width: 1024px )
+	.about-main
+		&__content
+			margin-top: 4rem
+		&-desc
+			+col-one
+			gap: 3rem
+		&-benefits
+			margin-top: 3rem
+			gap: 2rem
+
+@media screen and ( max-width: 576px )
+	.about-main
+		&-benefits
+			flex-direction: column
+			gap: 4rem

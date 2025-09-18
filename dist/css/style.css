@@ -1598,6 +1598,11 @@ svg path {
   opacity: 0.5;
 }
 
+.text strong {
+  font-family: Inter;
+  font-weight: 600;
+}
+
 .text ul li {
   position: relative;
   padding-left: 1rem;
@@ -2913,6 +2918,87 @@ svg path {
   margin: 0;
 }
 
+.about-main__content {
+  margin-top: 6.25rem;
+}
+
+.about-main-desc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.125rem;
+}
+
+.about-main-desc__text {
+  opacity: 1;
+}
+
+.about-main-benefits {
+  margin-top: 6.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 4rem;
+}
+
+.about-main-benefits__image .box {
+  width: 19.75rem;
+  height: 29.625rem;
+  border-radius: 1rem;
+}
+
+.about-main-benefits__list {
+  max-width: 38.125rem;
+  width: 100%;
+}
+
+.about-methods .methods-list {
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.about-reviews .main-reviews__title {
+  margin: 0;
+}
+
+.about-reviews .main-reviews-benefits {
+  margin-left: 41.25rem;
+}
+
+.about-reviews .main-reviews-benefits__items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.about-reviews .main-reviews-benefits__items .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.about-reviews .main-reviews-benefits__items .item-desc {
+  margin: 0;
+}
+
+.about-reviews .main-reviews-benefits__btn {
+  margin-left: 3.1875rem;
+}
+
 .reviews__content {
   margin-top: 6.25rem;
 }
@@ -3876,6 +3962,31 @@ svg path {
     max-width: 100%;
   }
 
+  .about-main__content {
+    margin-top: 4rem;
+  }
+
+  .about-main-desc {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+  }
+
+  .about-main-benefits {
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+
+  .about-reviews .main-reviews-benefits {
+    margin-left: 0;
+  }
+
+  .about-reviews .main-reviews-benefits__btn {
+    margin-left: 0;
+  }
+
   .reviews__content {
     margin-top: 3rem;
   }
@@ -4645,6 +4756,22 @@ svg path {
 
   .methods-benefits-item {
     gap: 1rem;
+  }
+
+  .about-main-benefits {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 4rem;
+  }
+
+  .about-methods .methods-list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
   }
 
   .reviews__cards {

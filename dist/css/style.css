@@ -1372,6 +1372,9 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100%;
+}
+
+.wrap {
   overflow: hidden;
 }
 
@@ -2929,6 +2932,25 @@ svg path {
 
 .methods-benefits-item .item-desc {
   margin: 0;
+}
+
+.about-main__block {
+  position: relative;
+}
+
+.about-main__block::before {
+  content: "";
+  width: 70rem;
+  height: 56.25rem;
+  background: #015D74;
+  opacity: 0.5;
+  -webkit-filter: blur(12.5rem);
+          filter: blur(12.5rem);
+  position: absolute;
+  top: 12.9375rem;
+  left: -0.375rem;
+  z-index: -1;
+  border-radius: 70%;
 }
 
 .about-main__content {
@@ -4760,6 +4782,10 @@ svg path {
     grid-template-columns: repeat(1, 1fr);
   }
 
+  .service-desc__block::before {
+    display: none;
+  }
+
   .service-desc__content {
     gap: 2rem;
   }
@@ -4790,6 +4816,13 @@ svg path {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 4rem;
+  }
+
+  .about-main__block::before {
+    width: 44.3125rem;
+    height: 35.625rem;
+    top: 9.5625rem;
+    left: -50%;
   }
 
   .about-methods .methods-list {

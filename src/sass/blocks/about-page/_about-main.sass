@@ -1,4 +1,18 @@
 .about-main
+	&__block
+		position: relative
+		&::before
+			content: ''
+			width: 70rem
+			height: 56.25rem
+			background: #015D74
+			opacity: 0.5
+			filter: blur(12.5rem)
+			position: absolute
+			top: 12.9375rem
+			left: -0.375rem
+			z-index: -1
+			border-radius: 70%
 	&__content
 		margin-top: 6.25rem
 	&-desc
@@ -36,3 +50,9 @@
 		&-benefits
 			flex-direction: column
 			gap: 4rem
+		&__block
+			&::before
+				width: 44.3125rem
+				height: 35.625rem
+				top: 9.5625rem
+				left: -50%

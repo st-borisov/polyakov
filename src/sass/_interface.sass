@@ -191,7 +191,7 @@ svg
 
 .title-page //h1
 	font-size: 6rem
-	line-height: 1
+	line-height: 1.2
 	+med
 
 .section-title //h2
@@ -224,6 +224,7 @@ svg
 	ul
 		li
 			position: relative
+			padding-left: 1rem
 			&::before
 				content: ''
 				min-width: .3125rem
@@ -233,7 +234,7 @@ svg
 				background-color: var(--text)
 				display: block
 				position: absolute
-				top: 0
+				top: .6875rem
 				left: 0
 	span
 		color: var(--accent)
@@ -479,7 +480,6 @@ svg
 		background-color: rgba(255, 255, 255, 0.1)
 		box-shadow: 0px .25rem 2.5rem 0px rgba(0, 0, 0, 0.08)
 		color: var(--text)
-		letter-spacing: 0.05em
 		font-size: 1.25rem
 		line-height: 1
 		padding: .875rem 1.5rem
@@ -609,6 +609,10 @@ svg
 
 	.text
 		font-size: .875rem
+		ul
+			li
+				&::before
+					top: .5625rem
 
 	.btn-light
 		min-width: 100%

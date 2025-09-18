@@ -4449,6 +4449,11 @@ svg path {
     padding: 1.5rem;
   }
 
+  .service-card {
+    min-height: 25rem;
+    max-height: 25rem;
+  }
+
   .footer::before {
     height: 33.125rem;
   }

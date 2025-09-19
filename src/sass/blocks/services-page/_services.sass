@@ -14,6 +14,8 @@
 		&__cards
 			margin-top: 4rem
 			+col-two
+		&__types
+			padding: 0
 
 @media screen and ( max-width: 576px )
 	.services
@@ -22,10 +24,12 @@
 				&:first-child
 					display: none
 		&__cards
-			display: none
+			//display: none
+			+col-one
 		&__types
 			display: block
 			margin-top: 4rem
+			padding: 0
 
 	.services-category
 		.services
@@ -35,3 +39,10 @@
 						display: flex
 			&__cards
 				+col-one
+
+	.services__categories.hide-mobile, .services__types.hide-mobile
+		display: none !important
+	.services__types.hide-mobile .types-more
+		display: none !important
+	.hide-mobile-3
+		display: none !important

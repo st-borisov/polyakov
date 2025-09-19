@@ -4,6 +4,13 @@ flsFunctions.isWebp();
 
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import $ from "jquery";
+import 'jquery.maskedinput/src/jquery.maskedinput.js';
+
+
+$(function () {
+	$(".tel").mask("+7 (999) 999-99-99");
+});
 
 
 /* Плавный скролл по ссылкам меню */
@@ -25,7 +32,7 @@ for (let smoothLink of smoothLinks) {
 const burger = document.querySelector('.header-burger');
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
-const menuLinks = document.querySelectorAll('.header-burger-content-menu a');
+const menuLinks = document.querySelectorAll('.header__menu a');
 if (burger) {
 	burger.addEventListener("click", function (e) {
 		body.classList.toggle('fixed');

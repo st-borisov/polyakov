@@ -24,8 +24,8 @@
 		position: relative
 	&-burger
 		display: none
-		&-menu
-			display: none
+	&__wrap
+		+center-stroke
 	&__logo
 		display: flex
 		max-width: 22.9375rem
@@ -102,33 +102,31 @@
 				bottom: 0
 		&.fixed
 			.header
-				&-burger
-					&-menu
-						display: block
-						background-color: var(--bg)
-						z-index: 5
-						width: 100%
-						height: 100vh
-						position: absolute
-						top: 0
-						left: 0
-						padding: 7.5rem 2rem
-						display: flex
-						flex-direction: column
-						justify-content: center
-						.header
-							&__menu
-								position: initial
-								display: block
-								width: auto
-								margin: 0
-								ul
-									text-align: center
-									+column
-							&__contacts
-								margin-top: 4rem
-								display: flex
-								flex-direction: column
+				&__wrap
+					background-color: var(--bg)
+					z-index: 5
+					width: 100%
+					height: 100vh
+					position: absolute
+					top: 0
+					left: 0
+					padding: 7.5rem 2rem
+					display: flex
+					flex-direction: column
+					justify-content: center
+					.header
+						&__menu
+							position: initial
+							display: block
+							width: auto
+							margin: 0
+							ul
+								text-align: center
+								+column
+						&__contacts
+							margin-top: 4rem
+							display: flex
+							flex-direction: column
 
 	.header-burger.fixed::after
 		top: 50%

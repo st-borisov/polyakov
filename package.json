@@ -48,6 +48,8 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
+		"jquery": "^3.7.1",
+		"jquery.maskedinput": "^1.4.1",
 		"normalize.css": "^8.0.1",
 		"uuid": "^8.3.2"
 	}
